@@ -26,3 +26,14 @@ hs_err_pid*
 
 !/.idea/
 /target/
+.idea/.gitignore
+.idea/codeStyles/
+.idea/compiler.xml
+.idea/misc.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+leetcode.iml
+pom.xml
+src/
+target/classes/META-INF/
+target/generated-sources/
