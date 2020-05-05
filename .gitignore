@@ -32,8 +32,6 @@ hs_err_pid*
 .idea/misc.xml
 .idea/uiDesigner.xml
 .idea/vcs.xml
-leetcode.iml
-pom.xml
-src/
+*.iml
 target/classes/META-INF/
 target/generated-sources/
