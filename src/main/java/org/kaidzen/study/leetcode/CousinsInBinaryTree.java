@@ -1,5 +1,7 @@
 package org.kaidzen.study.leetcode;
 
+import org.kaidzen.study.leetcode.util.TreeNode;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -12,7 +14,7 @@ public class CousinsInBinaryTree {
     private final AtomicInteger pX = new AtomicInteger(-1);
     private final AtomicInteger pY = new AtomicInteger(-1);
 
-    public boolean isCousins(TreeNode root, int x, int y) {
+    public boolean isCousins(org.kaidzen.study.leetcode.util.TreeNode root, int x, int y) {
         if(root == null || root.val == x || root.val == y){
             return false;
         }
@@ -22,7 +24,7 @@ public class CousinsInBinaryTree {
         return (dX.get() == dY.get()) && (pX.get() != pY.get());
     }
 
-    private void dfs(TreeNode root, int depth){
+    private void dfs(org.kaidzen.study.leetcode.util.TreeNode root, int depth){
         if (root == null) { return; }
         if (root.left != null){
             if (root.left.val == this.x) {
@@ -47,16 +49,16 @@ public class CousinsInBinaryTree {
         dfs(root.right, depth+1);
     }
 
-    private TreeNode xParent = null;
-    private TreeNode yParent = null;
+    private org.kaidzen.study.leetcode.util.TreeNode xParent = null;
+    private org.kaidzen.study.leetcode.util.TreeNode yParent = null;
     private int xDepth = -1;
     private int yDepth = -2;
 
-    public boolean isCousins2(TreeNode root, int x, int y) {
+    public boolean isCousins2(org.kaidzen.study.leetcode.util.TreeNode root, int x, int y) {
         dfs(root, null, x, y, 0);
         return xDepth == yDepth && xParent != yParent;
     }
-    private void dfs(TreeNode root, TreeNode parent, int x, int y, int depth) {
+    private void dfs(org.kaidzen.study.leetcode.util.TreeNode root, org.kaidzen.study.leetcode.util.TreeNode parent, int x, int y, int depth) {
         if (root == null) return;
         if (x == root.val) {
             xParent = parent;
@@ -75,38 +77,19 @@ public class CousinsInBinaryTree {
 //        Output: false
         int[] arr1 = new int[]{1,2,3,4};
         CousinsInBinaryTree cousins1 = new CousinsInBinaryTree();
-        TreeNode root1 = new TreeNode(arr1[0], new TreeNode(arr1[1], new TreeNode(arr1[3]), null),
-                new TreeNode(arr1[2], null, null));
+        org.kaidzen.study.leetcode.util.TreeNode root1 = new org.kaidzen.study.leetcode.util.TreeNode(arr1[0], new org.kaidzen.study.leetcode.util.TreeNode(arr1[1], new org.kaidzen.study.leetcode.util.TreeNode(arr1[3]), null),
+                new org.kaidzen.study.leetcode.util.TreeNode(arr1[2], null, null));
         System.out.println(cousins1.isCousins(root1, 4, 3));
 //        [1,2,3,null,4,null,5], x=5, y=4
 //        Output: false
         CousinsInBinaryTree cousins2 = new CousinsInBinaryTree();
         List<Integer> arr2 = Arrays.asList(1,2,3,null,4,null,5);
-        TreeNode root2 = new TreeNode(arr2.get(0), new TreeNode(arr2.get(1), null, new TreeNode(arr2.get(4))),
-                new TreeNode(arr2.get(2), null, new TreeNode(arr2.get(6))));
+        org.kaidzen.study.leetcode.util.TreeNode root2 = new org.kaidzen.study.leetcode.util.TreeNode(arr2.get(0), new org.kaidzen.study.leetcode.util.TreeNode(arr2.get(1), null, new org.kaidzen.study.leetcode.util.TreeNode(arr2.get(4))),
+                new org.kaidzen.study.leetcode.util.TreeNode(arr2.get(2), null, new org.kaidzen.study.leetcode.util.TreeNode(arr2.get(6))));
         System.out.println(cousins2.isCousins2(root2, 5, 4));
     }
 
     private static TreeNode createTree(int[] array) {
         return null;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
