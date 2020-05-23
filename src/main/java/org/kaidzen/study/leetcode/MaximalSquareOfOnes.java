@@ -1,7 +1,5 @@
 package org.kaidzen.study.leetcode;
 
-import java.util.Arrays;
-
 public class MaximalSquareOfOnes {
 
     public int maxSquare1(char[][] matrix){
@@ -13,7 +11,7 @@ public class MaximalSquareOfOnes {
         for(int x=0;x<result.length;x++){
             for(int y=0;y<result[0].length;y++){
                 if(x==0||y==0){
-                    if(matrix[x][y]=='1'){
+                    if(matrix[x][y] == 1){
                         answer = 1 ;
                         result[x][y]=1;
                     }
@@ -21,7 +19,7 @@ public class MaximalSquareOfOnes {
                         result[x][y]=0;
                     }
                 }
-                if(matrix[x][y]=='1')
+                if(matrix[x][y] == 1)
                     result[x][y]=1;
             }
         }
@@ -45,6 +43,6 @@ public class MaximalSquareOfOnes {
                 {1, 1, 1, 1, 1},
                 {1, 0, 0, 1, 0}
         };
-        squares.maxSquare1(matrix);
+        System.out.println(squares.maxSquare1(matrix));
     }
 }
