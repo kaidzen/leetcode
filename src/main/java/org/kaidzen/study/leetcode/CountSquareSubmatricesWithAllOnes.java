@@ -7,23 +7,23 @@ public class CountSquareSubmatricesWithAllOnes {
         int col = matrix[0].length;
         int[][] additive = new int[row][col];
         int count = 0;
-        for (int i=0; i<col; i++) // fill out additive with 1-th row of matrix, and counting "1"
+        for (int i = 0; i < col; i++) // fill out additive with 1-th row of matrix, and counting "1"
         {
             additive[0][i] = matrix[0][i];
             count += additive[0][i];
         }
-        for (int i=1; i<row; i++) // fill out additive with 1-th column of matrix, and counting "1"
+        for (int i = 1; i < row; i++) // fill out additive with 1-th column of matrix, and counting "1"
         {
             additive[i][0] = matrix[i][0];
             count += additive[i][0];
         }
-        for (int i=1; i< row; i++){
-            for (int j=1; j<col; j++){
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
                 //check if it contain with "1"
-                if (matrix[i][j] == 1){
+                if (matrix[i][j] == 1) {
                     //Fill out additive with minimum of right bottom corner's neighbours
                     additive[i][j] = 1 + Math.min(
-                            additive[i-1][j], Math.min(additive[i-1][j-1], additive[i][j-1]));
+                            additive[i - 1][j], Math.min(additive[i - 1][j - 1], additive[i][j - 1]));
                     //Count all other found square matrix
                     count += additive[i][j];
                 }
