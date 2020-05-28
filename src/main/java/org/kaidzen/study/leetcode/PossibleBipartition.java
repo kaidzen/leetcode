@@ -24,7 +24,7 @@ public class PossibleBipartition {
         }
         return true;
     }
-k
+
     private boolean dfs(List<Integer>[] adj, int[] groups, int v, int group){
         if (groups[v] == -1){
             groups[v] = group;
