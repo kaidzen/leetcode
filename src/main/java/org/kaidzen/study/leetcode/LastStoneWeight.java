@@ -1,6 +1,7 @@
-package org.kaidzen.leetcode;
+package org.kaidzen.study.leetcode;
 
-import java.util.*;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class LastStoneWeight {
 

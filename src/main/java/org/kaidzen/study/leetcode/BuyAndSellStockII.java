@@ -1,4 +1,4 @@
-package org.kaidzen.leetcode;
+package org.kaidzen.study.leetcode;
 
 import java.util.Arrays;
 import java.util.List;

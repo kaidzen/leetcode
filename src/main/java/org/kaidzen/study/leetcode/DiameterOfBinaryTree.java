@@ -1,8 +1,6 @@
-package org.kaidzen.leetcode;
+package org.kaidzen.study.leetcode;
 
 import javafx.util.Pair;
-
-import javax.swing.text.MutableAttributeSet;
 
 class TreeNode {
      int val;

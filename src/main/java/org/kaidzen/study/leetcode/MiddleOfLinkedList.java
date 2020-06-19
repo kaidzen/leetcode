@@ -1,7 +1,5 @@
-package org.kaidzen.leetcode;
+package org.kaidzen.study.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class MiddleOfLinkedList {
