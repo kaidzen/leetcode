@@ -46,6 +46,12 @@ public class LongestDuplicatedSubstring {
     }
 
     public static void main(String[] args) {
-
+        LongestDuplicatedSubstring duplicates = new LongestDuplicatedSubstring();
+//        Input: "banana"
+//        Output: "ana"
+        System.out.println(duplicates.longestDupSubstring("banana"));
+//        Input: "abcd"
+//        Output: ""
+        System.out.println(duplicates.longestDupSubstring("abcd"));
     }
 }
