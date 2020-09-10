@@ -2,12 +2,7 @@ package org.kaidzen.study.leetcode;
 
 import javafx.util.Pair;
 
-class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-     TreeNode(int x) { val = x; }
- }
+
 
 public class DiameterOfBinaryTree {
     public int diameterOfBinaryTree(TreeNode root) {
@@ -39,5 +34,12 @@ public class DiameterOfBinaryTree {
 
     public static void main(String[] args) {
 
+    }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
     }
 }
