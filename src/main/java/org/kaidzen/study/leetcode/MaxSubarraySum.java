@@ -1,11 +1,20 @@
 package org.kaidzen.study.leetcode;
 
+import org.kaidzen.study.leetcode.util.TreeNode;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class MaxSubarraySum {
 
     public static void main(String[] args) {
         int[] array = {-2,1,-3,4,-1,2,1,-5,4};
         MaxSubarraySum sub = new MaxSubarraySum();
         System.out.println(sub.maxSubArray(array));
+
+        Deque<TreeNode> list = new ArrayDeque<>();
+
+        list.removeLast();
     }
 
     public int maxSubArray(int[] nums) {
