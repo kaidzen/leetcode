@@ -29,25 +29,25 @@ public class SmallerThenCurrent {
     }
 
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        final int length = nums.length;
 
-//        Map<Integer, Pair<Integer>>
         List<Integer> sorted = Arrays.stream(nums)
                 .boxed()
                 .sorted()
                 .collect(Collectors.toList());
-        SortedMap<Integer, Integer> map = new TreeMap<>();
+        SortedMap<Integer, Integer> map = new TreeMap<>(); // store for "smaller than" amounts
         int previous = Integer.MIN_VALUE;
         AtomicInteger counter = new AtomicInteger(0);
+
         for (int val : sorted) {
             if (val > previous) {
-                map.putIfAbsent(val, counter.getAndIncrement());
+                map.putIfAbsent(val, counter.getAndIncrement()); // as we process sorted, just increment
             }
         }
 
+        final int length = nums.length;
         int[] rates = new int[length];
         for (int i = 0; i < length; i++) {
-            rates[i] = map.get(nums[i]);
+            rates[i] = map.get(nums[i]); // prepare result
         }
 
         return rates;
