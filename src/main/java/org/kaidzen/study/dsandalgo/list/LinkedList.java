@@ -1,6 +1,7 @@
 package org.kaidzen.study.dsandalgo.list;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
@@ -87,6 +88,33 @@ public class LinkedList<E> implements Iterable<E>{
 
             return node;
         }
+    }
+
+    public E findAtIndex(int index){
+        if (index < 0 || index > length){
+            throw new IllegalArgumentException("Invalid index for search");
+        } else if (index == length){
+            return this.last.value;
+        } else if (index == 0){
+            return this.first.value;
+        } else {
+            Node<E> result = this.first;
+            while (index >= 0){
+                if (result == null){
+                    throw new NoSuchElementException("Nothing to return - null element is stored");
+                } else if (index == 0){
+                    return result.value;
+                } else {
+                    index--;
+                    result = result.next;
+                }
+            }
+            return null;
+        }
+    }
+
+    public int size() {
+        return length;
     }
 
     protected static class Node<E>{
