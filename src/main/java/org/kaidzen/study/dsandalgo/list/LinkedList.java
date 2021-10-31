@@ -113,6 +113,63 @@ public class LinkedList<E> implements Iterable<E>{
         }
     }
 
+    public Node<E> removeFirst(){
+        if (length == 0){
+            throw new NoSuchElementException("Nothing to be removed");
+        }
+        Node<E> originalFirst = first;
+        first = first.next;
+        length--;
+        if (length == 0){
+            last = null;
+        }
+        return originalFirst;
+    }
+
+    public Node<E> removeAtIndex(int index){
+        if (index > length || index < 0){
+            throw new NoSuchElementException("Unable to remove");
+        }
+        if (index == 0){
+            return removeFirst();
+        }
+        Node<E> justBeforeIt = first;
+        while (--index > 0){
+            justBeforeIt = justBeforeIt.next;
+        }
+        Node<E> nodeRemoved = justBeforeIt.next;
+        if (justBeforeIt.next == last){
+            last = justBeforeIt.next.next;
+        } else if (justBeforeIt.next == null){
+            return removeLast();
+        }
+        justBeforeIt.next = justBeforeIt.next.next;
+        length--;
+
+        return nodeRemoved;
+    }
+
+    public Node<E> removeLast() {
+        if (length == 0){
+            throw new NoSuchElementException("Nothing to be removed");
+        }else if (length == 1){
+            Node<E> removed = last;
+            first = null;
+            last = null;
+            length = 0;
+            return removed;
+        }
+        Node<E> original = first;
+        int indx = length-2;
+        while (indx > 0){
+            original = original.next;
+            --indx;
+        }
+        Node<E> removed = original.next;
+        original.next = null;
+        return removed;
+    }
+
     public int size() {
         return length;
     }
@@ -120,5 +177,22 @@ public class LinkedList<E> implements Iterable<E>{
     protected static class Node<E>{
         protected E value;
         protected Node<E> next;
+    }
+
+    protected class ListIterator implements Iterator<E> {
+
+        protected Node<E> nextNode = first;
+        @Override
+        public boolean hasNext() {
+            return nextNode != null;
+        }
+
+        @Override
+        public E next() {
+            if (!hasNext()){
+
+            }
+            return null;
+        }
     }
 }
