@@ -1,9 +1,7 @@
 package org.kaidzen.study.leetcode;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class JewelsAndStones {
@@ -13,7 +11,7 @@ public class JewelsAndStones {
                 .collect(Collectors.toList());
         int result = 0;
         for (char ch : S.toCharArray()) {
-            if (jewelsList.contains(ch)){
+            if (jewelsList.contains(ch)) {
                 result++;
             }
         }
@@ -26,7 +24,7 @@ public class JewelsAndStones {
                 .collect(Collectors.toMap(k -> k, v -> 1));
         int result = 0;
         for (char ch : S.toCharArray()) {
-            if (jewelsList.getOrDefault(ch, 0) == 1){
+            if (jewelsList.getOrDefault(ch, 0) == 1) {
                 result++;
             }
         }
@@ -35,11 +33,11 @@ public class JewelsAndStones {
 
     public int numJewelsInStones3(String J, String S) {
         int[] alphabet = new int[256];
-        for (char ch: S.toCharArray()){
+        for (char ch : S.toCharArray()) {
             alphabet[ch]++;
         }
         int result = 0;
-        for (char ch: J.toCharArray()){
+        for (char ch : J.toCharArray()) {
             result += alphabet[ch];
         }
         return result;

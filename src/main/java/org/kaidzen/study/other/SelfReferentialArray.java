@@ -7,14 +7,14 @@ public class SelfReferentialArray {
 
     public static void main(String[] args) {
         List<int[]> inputs = Arrays.asList(
-                new int[]{1,2,1,0},
-                new int[]{2,0,2,0},
-                new int[]{2,1,2,0,0},
-                new int[]{3,2,1,1,0,0,0},
-                new int[]{4,2,1,0,1,0,0,0,},
-                new int[]{5,2,1,0,0,1,0,0,0},
-                new int[]{6,2,1,0,0,0,1,0,0,0},
-                new int[]{2,0,0},
+                new int[]{1, 2, 1, 0},
+                new int[]{2, 0, 2, 0},
+                new int[]{2, 1, 2, 0, 0},
+                new int[]{3, 2, 1, 1, 0, 0, 0},
+                new int[]{4, 2, 1, 0, 1, 0, 0, 0,},
+                new int[]{5, 2, 1, 0, 0, 1, 0, 0, 0},
+                new int[]{6, 2, 1, 0, 0, 0, 1, 0, 0, 0},
+                new int[]{2, 0, 0},
                 new int[]{0}
         );
         List<Integer> answers = Arrays.asList(1, 1, 1, 1, 1, 1, 1, 0, 0);
@@ -32,14 +32,14 @@ public class SelfReferentialArray {
 
     private static int isSelfReferential(int[] ints) {
         int[] helper = new int[ints.length];
-        for (int i = 0; i < ints.length; i++){
+        for (int i = 0; i < ints.length; i++) {
             helper[i] = ints[i];
         }
         for (int val : ints) {
             helper[val]--;
         }
         for (int count : helper) {
-            if (count != 0){
+            if (count != 0) {
                 return 0;
             }
         }

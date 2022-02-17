@@ -70,7 +70,7 @@ class Trie {
      * Returns if there is any word in the trie that starts with the given prefix.
      */
     public boolean startsWith(String prefix) {
-        if (prefix == null){
+        if (prefix == null) {
             return false;
         }
         int length = prefix.length();

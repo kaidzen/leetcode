@@ -13,11 +13,11 @@ public class Trie {
         this.isEndOfWord = false;
     }
 
-    public void insert(String word){
+    public void insert(String word) {
         Trie next = root;
-        for (char ch: word.toCharArray()){
+        for (char ch : word.toCharArray()) {
             int index = ch - 'a';
-            if (next.children[index] == null){
+            if (next.children[index] == null) {
                 next.children[index] = new Trie();
             }
             next = next.children[index];
@@ -25,11 +25,11 @@ public class Trie {
         next.isEndOfWord = true;
     }
 
-    public boolean search(String word){
+    public boolean search(String word) {
         Trie next = root;
-        for (char ch: word.toCharArray()) {
+        for (char ch : word.toCharArray()) {
             int index = ch - 'a';
-            if (next.children[index] == null){
+            if (next.children[index] == null) {
                 return false;
             }
             next = next.children[index];
@@ -37,13 +37,13 @@ public class Trie {
         return next != null && next.isEndOfWord;
     }
 
-    public boolean startWith(String prefix){
+    public boolean startWith(String prefix) {
         if (prefix == null) {
             return false;
         }
-        for (char ch: prefix.toCharArray()){
+        for (char ch : prefix.toCharArray()) {
             int index = ch - 'a';
-            if (root.children[index] == null){
+            if (root.children[index] == null) {
                 return false;
             }
         }
@@ -54,7 +54,7 @@ public class Trie {
         return this.children;
     }
 
-    public boolean isEndOfWord(){
+    public boolean isEndOfWord() {
         return this.isEndOfWord;
     }
 }

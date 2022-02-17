@@ -21,7 +21,7 @@ public class ReconstructItinerary {
 
     private void dfs(String city) {
         Queue<String> queue = adjList.get(city);
-        while (Objects.nonNull(queue) && !queue.isEmpty()){
+        while (Objects.nonNull(queue) && !queue.isEmpty()) {
             //Each first in queue will be taken for search by dfs
             String firstAdjacent = queue.poll();
             dfs(firstAdjacent);
@@ -47,11 +47,11 @@ public class ReconstructItinerary {
 //        Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"].
 //        But it is larger in lexical order.
         List<List<String>> tickets2 = Arrays.asList(
-                Arrays.asList("JFK","SFO"),
-                Arrays.asList("JFK","ATL"),
-                Arrays.asList("SFO","ATL"),
-                Arrays.asList("ATL","JFK"),
-                Arrays.asList("ATL","SFO")
+                Arrays.asList("JFK", "SFO"),
+                Arrays.asList("JFK", "ATL"),
+                Arrays.asList("SFO", "ATL"),
+                Arrays.asList("ATL", "JFK"),
+                Arrays.asList("ATL", "SFO")
         );
         List<String> res2 = itinerary.findItinerary(tickets2);
         System.out.println(res2);

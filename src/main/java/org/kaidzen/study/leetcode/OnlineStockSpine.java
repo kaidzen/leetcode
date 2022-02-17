@@ -22,17 +22,17 @@ class StockSpanner {
     int index;
 
     public StockSpanner() {
-        index= -1;
+        index = -1;
     }
 
     public int next(int price) {
         index += 1;
-        while (!stack.isEmpty() && stack.peek().getValue() <= price){
+        while (!stack.isEmpty() && stack.peek().getValue() <= price) {
             stack.pop();
         }
-        if (stack.isEmpty()){
+        if (stack.isEmpty()) {
             stack.push(new Pair<>(index, price));
-            return index+1;
+            return index + 1;
         }
         int result = stack.peek().getKey();
         stack.push(new Pair<>(index, price));

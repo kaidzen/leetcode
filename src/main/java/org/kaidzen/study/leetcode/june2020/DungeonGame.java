@@ -7,29 +7,29 @@ public class DungeonGame {
         int columns = dungeon[0].length;
         int[][] solution = new int[rows][columns];
         //Start resolving from final step. Etraxt from 1, from convert negative value.
-        solution[rows-1][columns-1] = dungeon[rows-1][columns-1] > 0 ? 1 : (1 - dungeon[rows-1][columns-1]);
+        solution[rows - 1][columns - 1] = dungeon[rows - 1][columns - 1] > 0 ? 1 : (1 - dungeon[rows - 1][columns - 1]);
 
-        for (int i = rows-2; i >= 0; i--) {
+        for (int i = rows - 2; i >= 0; i--) {
             //Calculate solution for last column
-            solution[i][columns-1] =
+            solution[i][columns - 1] =
                     //If previous value minus current negative, use minimal health value
                     // (for knight to reach final step)
-                    Math.max(solution[i+1][columns-1] - dungeon[i][columns-1], 1);
+                    Math.max(solution[i + 1][columns - 1] - dungeon[i][columns - 1], 1);
         }
-        for (int j = columns-2; j >= 0; j--) {
+        for (int j = columns - 2; j >= 0; j--) {
             //Calculate solution for last row
-            solution[rows-1][j] =
+            solution[rows - 1][j] =
                     //If previous value minus current negative, use minimal health value
                     // (for knight to reach final step)
-                    Math.max(solution[rows-1][j+1] - dungeon[rows-1][j], 1);
+                    Math.max(solution[rows - 1][j + 1] - dungeon[rows - 1][j], 1);
         }
-        for (int i = rows-2; i >= 0; i--) {
-            for (int j = columns-2; j >= 0; j--) {
+        for (int i = rows - 2; i >= 0; i--) {
+            for (int j = columns - 2; j >= 0; j--) {
                 //Calculate solution for all rest columns and rows. With max we will set
                 // minimal required level of life for knight >=1
                 //And we will take only minimal values, according to task
                 // (Find minimal life amount, that will allow to finish)
-                solution[i][j] = Math.max(Math.min(solution[i+1][j], solution[i][j+1]) - dungeon[i][j], 1);
+                solution[i][j] = Math.max(Math.min(solution[i + 1][j], solution[i][j + 1]) - dungeon[i][j], 1);
             }
         }
         //Backward steps will lead to start point

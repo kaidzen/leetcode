@@ -7,16 +7,16 @@ import java.util.*;
 public class WordSearch2 {
 
     public List<String> findWords(char[][] board, String[] words) {
-        if (words.length == 0){
+        if (words.length == 0) {
             return Collections.emptyList();
         }
         Trie trie = new Trie();
-        for (String word: words){
+        for (String word : words) {
             trie.insert(word);
         }
         Set<String> res = new HashSet<>();
-        for (int i=0; i<board.length; i++){
-            for (int j=0; j<board[0].length; j++){
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
                 dfs(board, i, j, res, trie, "");
             }
         }
@@ -25,20 +25,28 @@ public class WordSearch2 {
 
     private void dfs(char[][] board, int i, int j, Set<String> res, Trie trie, String currentStr) {
         char ch = board[i][j];
-        if (ch == '$'){
+        if (ch == '$') {
             return;
         }
         board[i][j] = '$';
-        Trie current = trie.getChildren()[ch-'a'];
-        if (current != null){
+        Trie current = trie.getChildren()[ch - 'a'];
+        if (current != null) {
             String str = currentStr + ch;
             if (current.isEndOfWord()) {
                 res.add(str);
             }
-            if (i < board.length-1) {dfs(board, i+1, j, res, current, currentStr);}
-            if (j < board[0].length-1) {dfs(board, i, j+1, res, current, currentStr);}
-            if (i > 0) {dfs(board, i-1, j, res, current, currentStr);}
-            if (j > 0) {dfs(board, i, j-1, res, current, currentStr);}
+            if (i < board.length - 1) {
+                dfs(board, i + 1, j, res, current, currentStr);
+            }
+            if (j < board[0].length - 1) {
+                dfs(board, i, j + 1, res, current, currentStr);
+            }
+            if (i > 0) {
+                dfs(board, i - 1, j, res, current, currentStr);
+            }
+            if (j > 0) {
+                dfs(board, i, j - 1, res, current, currentStr);
+            }
         }
         board[i][j] = ch;
     }

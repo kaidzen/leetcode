@@ -8,10 +8,10 @@ public class SubarraySumEqualsK {
     public int subarraySum(int[] nums, int k) {
         int length = nums.length;
         int result = 0;
-        for (int i = 0; i< length; i++){
-            for (int j = i+1; j< length; j++){
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
                 int sum = summIntervalOf(nums, i, j);
-                if (sum == k){
+                if (sum == k) {
                     result++;
                 }
             }
@@ -39,7 +39,7 @@ public class SubarraySumEqualsK {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = new int[] {1,1,1};
+        int[] arr1 = new int[]{1, 1, 1};
 
         SubarraySumEqualsK subSumm = new SubarraySumEqualsK();
 

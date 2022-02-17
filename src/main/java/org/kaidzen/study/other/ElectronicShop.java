@@ -28,20 +28,18 @@ public class ElectronicShop {
 
         List<Integer> candidates = new ArrayList<>();
 
-        for (int k = kLength-1; k>=0; k--){
+        for (int k = kLength - 1; k >= 0; k--) {
             final int check = k - 1;
             int nextK = Math.max(check, 0);
 
-            for (int d = dLength-1; d>0; d--){
+            for (int d = dLength - 1; d > 0; d--) {
                 final int current = keyboards[k] + drives[d];
                 if (current == b) {
                     return current;
                 }
-                if (current < b ) {
+                if (current < b) {
                     candidates.add(current);
                 }
-//                if (keyboards[k] + drives[d-1] < current){
-//                }
             }
         }
         return candidates.stream()
@@ -49,7 +47,7 @@ public class ElectronicShop {
                 .orElse(notFound);
     }
 
-    int getMoneySpent2(int[] keyboards, int[] drives, int b){
+    int getMoneySpent2(int[] keyboards, int[] drives, int b) {
         Arrays.sort(keyboards);
         Arrays.sort(drives);
 
@@ -61,11 +59,12 @@ public class ElectronicShop {
             return max;
         }
 
-        for(int i = 0; i < kLength; i++){
-            for(int j = dLength-1; j > 0; j--){
-                if(keyboards[i]+drives[j] > b) break; //This prevents j from incrementing
-                if(keyboards[i]+drives[j] > max)
-                    max = keyboards[i]+drives[j];
+        for (int i = 0; i < kLength; i++) {
+            for (int j = dLength - 1; j > 0; j--) {
+                final int current = keyboards[i] + drives[j];
+                if (current > b) break; //This prevents j from incrementing
+                if (current > max)
+                    max = current;
             }
         }
         return max;

@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class LinkedList<E> implements Iterable<E>{
+public class LinkedList<E> implements Iterable<E> {
 
     int length = 0;
     Node<E>[] lastModifiedNode;
@@ -27,36 +27,36 @@ public class LinkedList<E> implements Iterable<E>{
         return null;
     }
 
-    protected Node<E> getNewNode(){
+    protected Node<E> getNewNode() {
         Node<E> node = new Node<>();
         lastModifiedNode = new Node[]{node};
         return node;
     }
 
-    public Node<E> appendLast(E value){
+    public Node<E> appendLast(E value) {
         Node<E> node = getNewNode();
         node.value = value;
 
-        if (last != null){
+        if (last != null) {
             last.next = node;
         }
         last = node;
 
-        if (first == null){
+        if (first == null) {
             first = node;
         }
         length++;
         return node;
     }
 
-    public Node<E> appendFirst(E value){
+    public Node<E> appendFirst(E value) {
         Node<E> node = getNewNode();
         node.value = value;
 
         node.next = first;
         first = node;
 
-        if (length == 0){
+        if (length == 0) {
             last = node;
         }
         length++;
@@ -67,16 +67,16 @@ public class LinkedList<E> implements Iterable<E>{
     public Node<E> insert(int index, E value) {
         Node<E> node = getNewNode();
 
-        if (index < 0 || index > length){
+        if (index < 0 || index > length) {
             throw new IllegalArgumentException("Invalid index for insertion");
-        } else if (index == length){
+        } else if (index == length) {
             return appendLast(value);
-        } else if (index == 0){
+        } else if (index == 0) {
             return appendFirst(value);
         } else {
             Node<E> former = first;
             int idx = index;
-            while (idx > 1){
+            while (idx > 1) {
                 idx--;
                 former = former.next;
             }
@@ -90,19 +90,19 @@ public class LinkedList<E> implements Iterable<E>{
         }
     }
 
-    public E findAtIndex(int index){
-        if (index < 0 || index > length){
+    public E findAtIndex(int index) {
+        if (index < 0 || index > length) {
             throw new IllegalArgumentException("Invalid index for search");
-        } else if (index == length){
+        } else if (index == length) {
             return this.last.value;
-        } else if (index == 0){
+        } else if (index == 0) {
             return this.first.value;
         } else {
             Node<E> result = this.first;
-            while (index >= 0){
-                if (result == null){
+            while (index >= 0) {
+                if (result == null) {
                     throw new NoSuchElementException("Nothing to return - null element is stored");
-                } else if (index == 0){
+                } else if (index == 0) {
                     return result.value;
                 } else {
                     index--;
@@ -113,34 +113,34 @@ public class LinkedList<E> implements Iterable<E>{
         }
     }
 
-    public Node<E> removeFirst(){
-        if (length == 0){
+    public Node<E> removeFirst() {
+        if (length == 0) {
             throw new NoSuchElementException("Nothing to be removed");
         }
         Node<E> originalFirst = first;
         first = first.next;
         length--;
-        if (length == 0){
+        if (length == 0) {
             last = null;
         }
         return originalFirst;
     }
 
-    public Node<E> removeAtIndex(int index){
-        if (index > length || index < 0){
+    public Node<E> removeAtIndex(int index) {
+        if (index > length || index < 0) {
             throw new NoSuchElementException("Unable to remove");
         }
-        if (index == 0){
+        if (index == 0) {
             return removeFirst();
         }
         Node<E> justBeforeIt = first;
-        while (--index > 0){
+        while (--index > 0) {
             justBeforeIt = justBeforeIt.next;
         }
         Node<E> nodeRemoved = justBeforeIt.next;
-        if (justBeforeIt.next == last){
+        if (justBeforeIt.next == last) {
             last = justBeforeIt.next.next;
-        } else if (justBeforeIt.next == null){
+        } else if (justBeforeIt.next == null) {
             return removeLast();
         }
         justBeforeIt.next = justBeforeIt.next.next;
@@ -150,9 +150,9 @@ public class LinkedList<E> implements Iterable<E>{
     }
 
     public Node<E> removeLast() {
-        if (length == 0){
+        if (length == 0) {
             throw new NoSuchElementException("Nothing to be removed");
-        }else if (length == 1){
+        } else if (length == 1) {
             Node<E> removed = last;
             first = null;
             last = null;
@@ -160,8 +160,8 @@ public class LinkedList<E> implements Iterable<E>{
             return removed;
         }
         Node<E> original = first;
-        int indx = length-2;
-        while (indx > 0){
+        int indx = length - 2;
+        while (indx > 0) {
             original = original.next;
             --indx;
         }
@@ -174,7 +174,7 @@ public class LinkedList<E> implements Iterable<E>{
         return length;
     }
 
-    protected static class Node<E>{
+    protected static class Node<E> {
         protected E value;
         protected Node<E> next;
     }
@@ -182,6 +182,7 @@ public class LinkedList<E> implements Iterable<E>{
     protected class ListIterator implements Iterator<E> {
 
         protected Node<E> nextNode = first;
+
         @Override
         public boolean hasNext() {
             return nextNode != null;
@@ -189,7 +190,7 @@ public class LinkedList<E> implements Iterable<E>{
 
         @Override
         public E next() {
-            if (!hasNext()){
+            if (!hasNext()) {
 
             }
             return null;

@@ -23,7 +23,7 @@ public class BullsAndCows {
 
     public String getHint(String secret, String guess) {
         int length = secret.length();
-        if (length != guess.length()){
+        if (length != guess.length()) {
             return "ERROR";
         }
         int bulls = 0;
@@ -31,10 +31,10 @@ public class BullsAndCows {
         int[] sIndx = new int[10];
         int[] gIndx = new int[10];
 
-        for (int i=0; i<length; i++){
+        for (int i = 0; i < length; i++) {
             char sChar = secret.charAt(i);
             char gChar = guess.charAt(i);
-            if (sChar == gChar){
+            if (sChar == gChar) {
                 bulls++;
             } else {
                 sIndx[sChar - '0']++;
@@ -42,7 +42,7 @@ public class BullsAndCows {
             }
         }
 
-        for (int i=0; i<sIndx.length-1; i++){
+        for (int i = 0; i < sIndx.length - 1; i++) {
             cows += Math.min(sIndx[i], gIndx[i]);
         }
         return String.format("%dA%dB", bulls, cows);

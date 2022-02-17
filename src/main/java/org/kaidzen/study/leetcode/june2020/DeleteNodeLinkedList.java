@@ -31,7 +31,7 @@ public class DeleteNodeLinkedList {
     private static ListNode filloutList(int[] ints) {
         ListNode root = new ListNode(ints[0]);
         ListNode next = root;
-        for(int i=1; i<ints.length-1; i++){
+        for (int i = 1; i < ints.length - 1; i++) {
             next.next = new ListNode(i);
             next = next.next;
         }

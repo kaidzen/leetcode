@@ -6,11 +6,11 @@ import java.util.Comparator;
 public class KClosestPointsToOrigin {
 
     public int[][] kClosest1(int[][] points, int K) {
-        Comparator<int[]> comparator = (p1, p2) -> (p1[0]*p1[0] + p1[1]*p1[1]) - (p2[0]*p2[0] + p2[1]*p2[1]);
+        Comparator<int[]> comparator = (p1, p2) -> (p1[0] * p1[0] + p1[1] * p1[1]) - (p2[0] * p2[0] + p2[1] * p2[1]);
 
         Arrays.sort(points, comparator);
         int[][] result = new int[K][];
-        for (int i=0; i<K; i++){
+        for (int i = 0; i < K; i++) {
             result[i] = points[i];
         }
         return result;
@@ -27,6 +27,6 @@ public class KClosestPointsToOrigin {
 //        Since sqrt(8) < sqrt(10), (-2, 2) is closer to the origin.
 //        We only want the closest K = 1 points from the origin, so the answer is just [[-2,2]].
 
-        System.out.println(Arrays.deepToString(closestPoint.kClosest1(new int[][]{{1,3}, {-2,2}}, 1)));
+        System.out.println(Arrays.deepToString(closestPoint.kClosest1(new int[][]{{1, 3}, {-2, 2}}, 1)));
     }
 }

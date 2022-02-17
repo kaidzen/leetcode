@@ -16,7 +16,7 @@ public class ProductOfArrayExceptSelf {
 
         int[] productTop = new int[length];
         temp = 1;
-        for (int i = length-1; i >= 0; --i) {
+        for (int i = length - 1; i >= 0; --i) {
             productTop[i] = temp;
             temp *= nums[i];
         }
@@ -29,8 +29,8 @@ public class ProductOfArrayExceptSelf {
     }
 
     public static void main(String[] args) {
-        int[]input =  {1,2,3,4};
-        int[] output = {24,12,8,6};
+        int[] input = {1, 2, 3, 4};
+        int[] output = {24, 12, 8, 6};
         ProductOfArrayExceptSelf product = new ProductOfArrayExceptSelf();
 
         System.out.println(Arrays.toString(product.productExceptSelf(input)));

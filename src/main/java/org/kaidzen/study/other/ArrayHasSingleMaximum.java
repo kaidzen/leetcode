@@ -18,16 +18,16 @@ public class ArrayHasSingleMaximum {
         );
         List<Integer> answers = Arrays.asList(1, 1, 0, 0, 0, 0);
         final int size = inputs.size();
-        if (size != answers.size()){
+        if (size != answers.size()) {
             System.err.println("Failed to check on different inputs and answers...");
             return;
         }
 
-        for (int i = 0; i < size-1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             System.out.println(hasSingleMaximum1(inputs.get(i)));
         }
         System.out.println("======");
-        for (int i = 0; i < size-1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             System.out.println(hasSingleMaximum2(inputs.get(i)));
         }
     }
@@ -35,11 +35,11 @@ public class ArrayHasSingleMaximum {
     private static int hasSingleMaximum1(int[] ints) {
         Map<Integer, Integer> map = new HashMap<>();
         int max = Integer.MIN_VALUE;
-        for (int num: ints) {
+        for (int num : ints) {
             map.merge(num, 1, (old, fresh) -> old + 1);
             max = Math.max(num, max);
         }
-        if (max == Integer.MIN_VALUE){
+        if (max == Integer.MIN_VALUE) {
             return 0;
         }
         final Integer occurrence = map.get(max);
@@ -52,13 +52,13 @@ public class ArrayHasSingleMaximum {
         final int length = ints.length;
         for (int i = 0; i < length; i++) {
             int num = ints[i];
-            max = num > max ? num : max;
+            max = Math.max(num, max);
         }
-        if (max == Integer.MIN_VALUE){
+        if (max == Integer.MIN_VALUE) {
             return 0;
         }
         for (int val : ints) {
-            if (val == max){
+            if (val == max) {
                 counter++;
             }
         }

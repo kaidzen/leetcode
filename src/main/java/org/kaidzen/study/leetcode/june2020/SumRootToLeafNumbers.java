@@ -7,7 +7,7 @@ public class SumRootToLeafNumbers {
     private int answer = 0;
 
     public int sumNumbers(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return 0;
         }
         dfs(root, 0);
@@ -19,9 +19,9 @@ public class SumRootToLeafNumbers {
             return;
         }
         //As for decimals, we will increase order of number by 10
-        int shiftedValue = value*10;
+        int shiftedValue = value * 10;
         shiftedValue += root.val;
-        if (root.left == null && root.right == null){
+        if (root.left == null && root.right == null) {
             //For each leaf we have answer, so summarize it.
             answer += shiftedValue;
             return;

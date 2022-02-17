@@ -19,7 +19,7 @@ public class GroupAnagrams {
                 .collect(Collectors.groupingBy(this::calculateAnagramHash, HashMap::new,
                         Collectors.mapping(Function.identity(), Collectors.toList())));
         result.forEach(
-                (s, strings) -> System.out.println("Key: " +s+ "value: " +strings)
+                (s, strings) -> System.out.println("Key: " + s + "value: " + strings)
         );
         return result.entrySet().stream()
                 .map(Map.Entry::getValue)

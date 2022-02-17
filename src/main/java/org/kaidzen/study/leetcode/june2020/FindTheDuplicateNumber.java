@@ -11,15 +11,15 @@ public class FindTheDuplicateNumber {
         int currentMax = 0;
         //As values in array within range 1..n, we will
         // take value and modify number, that referenced by this value
-        for (int i=0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             //Modulo of size will keep as in range array length
-           int id = nums[i] % n;
-           //Modification done by add current "constant" - length of array
-           nums[id] += n;
+            int id = nums[i] % n;
+            //Modification done by add current "constant" - length of array
+            nums[id] += n;
         }
-        for (int i=0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             //Travers modified array to find max value
-            if (nums[i] > currentMax){
+            if (nums[i] > currentMax) {
                 currentMax = nums[i];
                 //Take index of current maximum value
                 maxIdx = i;

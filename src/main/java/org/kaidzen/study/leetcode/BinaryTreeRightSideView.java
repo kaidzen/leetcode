@@ -11,7 +11,7 @@ public class BinaryTreeRightSideView {
     private List<Integer> result = new ArrayList<>();
 
     public List<Integer> rightSideView(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return Collections.emptyList();
         }
         collectAllRight(root);
@@ -19,10 +19,10 @@ public class BinaryTreeRightSideView {
         return result;
     }
 
-    private void collectAllRight(TreeNode root){
+    private void collectAllRight(TreeNode root) {
         result.add(root.val);
         TreeNode right = root.right;
-        if (right != null){
+        if (right != null) {
 //            checkNode(right.val);
             collectAllRight(right);
         }

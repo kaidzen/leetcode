@@ -21,8 +21,8 @@ public class PartitionArrayIntoThreePartsEqualSum {
 
         List<int[]> list = Arrays.asList(
                 new int[]{0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1},
-                new int[]{0,2,1,-6,6,7,9,-1,2,0,1},
-                new int[]{3,3,6,5,-2,2,5,1,-9,4}
+                new int[]{0, 2, 1, -6, 6, 7, 9, -1, 2, 0, 1},
+                new int[]{3, 3, 6, 5, -2, 2, 5, 1, -9, 4}
         );
         PartitionArrayIntoThreePartsEqualSum partition = new PartitionArrayIntoThreePartsEqualSum();
 

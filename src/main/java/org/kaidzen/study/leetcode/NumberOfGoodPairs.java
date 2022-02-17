@@ -11,7 +11,7 @@ public class NumberOfGoodPairs {
         List<int[]> list = Arrays.asList(
                 new int[]{1, 2, 3, 1, 1, 3},
                 new int[]{1, 1, 1, 1},
-                new int[]{1,2,3}
+                new int[]{1, 2, 3}
         );
         NumberOfGoodPairs pairs = new NumberOfGoodPairs();
         list.forEach(
@@ -24,16 +24,16 @@ public class NumberOfGoodPairs {
 
     public int numIdenticalPairs1(int[] nums) {
         int pairs = 0;
-        for (int i = 0; i < nums.length-1; i++) {
+        for (int i = 0; i < nums.length - 1; i++) {
             final int current = nums[i];
             final int next = nums[i + 1];
             if (current == next) {
                 pairs++;
             }
-            int backCount = i+1;
+            int backCount = i + 1;
             int temp = i;
-            while (backCount > 0){
-                if (temp > 0 && nums[--temp] == next){
+            while (backCount > 0) {
+                if (temp > 0 && nums[--temp] == next) {
                     pairs++;
                 }
                 backCount--;
@@ -46,7 +46,7 @@ public class NumberOfGoodPairs {
     public int numIdenticalPairs2(int[] nums) {
         int count = 0;
         int[] similar = new int[MAX_VALUE];
-        for (int num: nums) {
+        for (int num : nums) {
             count += similar[num]++;
         }
         return count;

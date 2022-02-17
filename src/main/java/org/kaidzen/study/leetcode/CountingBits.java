@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class CountingBits {
 
     public int[] countBits(int num) {
-        int[] bitsCount = new int[num+1];
-        for (int i=1; i<=num; i++){
-            bitsCount[i] = bitsCount[i>>1] + i%2;
+        int[] bitsCount = new int[num + 1];
+        for (int i = 1; i <= num; i++) {
+            bitsCount[i] = bitsCount[i >> 1] + i % 2;
         }
         return bitsCount;
     }

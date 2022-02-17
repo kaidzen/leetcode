@@ -9,7 +9,6 @@ public class CreateTargetArrayTheGivenOrder {
         CreateTargetArrayTheGivenOrder arrayGenerator = new CreateTargetArrayTheGivenOrder();
 
 
-
 //        Input: nums = [0, 1,2,3,4], index = [0,1,2,2,1]
 //        Output: [0,4,1,3,2]
 
@@ -28,13 +27,13 @@ public class CreateTargetArrayTheGivenOrder {
         System.out.println(calculateOccurrence(str));
     }
 
-    private static Map<Integer, Integer> calculateOccurrence(String word){
+    private static Map<Integer, Integer> calculateOccurrence(String word) {
         Map<Integer, Integer> map = new HashMap<>();
         final int zero = 48;
 
         word.chars().boxed()
                 .forEach(integer -> {
-                    map.merge(integer ^ zero, 1, (ov, nv) -> ov+1);
+                    map.merge(integer ^ zero, 1, (ov, nv) -> ov + 1);
                 });
         return map;
     }
@@ -72,8 +71,8 @@ public class CreateTargetArrayTheGivenOrder {
         final int length = index.length;
         List<Integer> list = new ArrayList<>();
 
-        for(int i = 0; i< length; i++)
-            list.add(index[i],nums[i]);
+        for (int i = 0; i < length; i++)
+            list.add(index[i], nums[i]);
 
         return list.stream()
                 .mapToInt(value -> value)
@@ -90,9 +89,9 @@ public class CreateTargetArrayTheGivenOrder {
         }
 
         for (int i = 0; i < length; i++) {
-            if (result[index[i]] == marker){
-                for(int j=i; j>index[i]; j--){
-                    result[j] = result[j-1];
+            if (result[index[i]] == marker) {
+                for (int j = i; j > index[i]; j--) {
+                    result[j] = result[j - 1];
                 }
                 result[index[i]] = nums[i];
             } else {

@@ -3,10 +3,9 @@ package org.kaidzen.study.leetcode;
 import javafx.util.Pair;
 
 
-
 public class DiameterOfBinaryTree {
     public int diameterOfBinaryTree(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
         int diameter = maxDepth(root.left) + maxDepth(root.right);
@@ -14,7 +13,7 @@ public class DiameterOfBinaryTree {
     }
 
     private int maxDepth(TreeNode node) {
-        if (node == null){
+        if (node == null) {
             return 0;
         }
         int left = maxDepth(node.left);
@@ -22,8 +21,8 @@ public class DiameterOfBinaryTree {
         return Math.max(left, right) + 1;
     }
 
-    private Pair<Integer, Integer> dfs(TreeNode root){
-        if (root == null){
+    private Pair<Integer, Integer> dfs(TreeNode root) {
+        if (root == null) {
             return new Pair<>(0, 0);
         }
         Pair<Integer, Integer> left = dfs(root.left);
@@ -40,6 +39,9 @@ public class DiameterOfBinaryTree {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

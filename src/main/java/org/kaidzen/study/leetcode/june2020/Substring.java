@@ -5,8 +5,8 @@ public class Substring {
     public boolean isSubsequence3(String s, String t) {
         if (s.length() == 0) return true;
         int sIdx = 0;
-        for (int tIdx = 0; tIdx<t.length(); tIdx++){
-            if (t.charAt(tIdx) == s.charAt(sIdx)){
+        for (int tIdx = 0; tIdx < t.length(); tIdx++) {
+            if (t.charAt(tIdx) == s.charAt(sIdx)) {
                 sIdx++;
             }
             //to stop before end of t, if already found
@@ -16,11 +16,15 @@ public class Substring {
     }
 
     public boolean isSubsequence2(String s, String t) {
-        if (s.length() == 0){ return true;}
-        if (t.length() == 0){ return false;}
-        if (s.charAt(0) == t.charAt(0)){
+        if (s.length() == 0) {
+            return true;
+        }
+        if (t.length() == 0) {
+            return false;
+        }
+        if (s.charAt(0) == t.charAt(0)) {
             return isSubsequence2(s.substring(1), t.substring(1));
-        }else {
+        } else {
             return isSubsequence2(s, t.substring(1));
         }
     }
@@ -28,12 +32,12 @@ public class Substring {
     //Only for free-ordered characters, just contains in
     public boolean isSubsequence1(String s, String t) {
         char[] alphabet = new char[26];
-        for (char ch: t.toCharArray()){
+        for (char ch : t.toCharArray()) {
             alphabet[ch - 'a']++;
         }
         int counter = 0;
-        for (char ch: s.toCharArray()){
-            if (alphabet[ch - 'a'] > 0){
+        for (char ch : s.toCharArray()) {
+            if (alphabet[ch - 'a'] > 0) {
                 counter++;
                 alphabet[ch - 'a']--;
             }

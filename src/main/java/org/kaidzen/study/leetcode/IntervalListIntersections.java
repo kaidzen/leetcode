@@ -12,14 +12,14 @@ public class IntervalListIntersections {
         int sizeA = A.length;
         int sizeB = B.length;
         Deque<int[]> result = new LinkedList<>();
-        while (pointerA<sizeA && pointerB<sizeB){
-            if (B[pointerB][0] <= A[pointerA][1] && A[pointerA][0] <= B[pointerB][1]){
+        while (pointerA < sizeA && pointerB < sizeB) {
+            if (B[pointerB][0] <= A[pointerA][1] && A[pointerA][0] <= B[pointerB][1]) {
                 result.addLast(new int[]{
                         Math.max(A[pointerA][0], B[pointerB][0]),
                         Math.min(A[pointerA][1], B[pointerB][1]),
                 });
             }
-            if (A[pointerA][1] > B[pointerB][1]){
+            if (A[pointerA][1] > B[pointerB][1]) {
                 pointerB++;
             } else {
                 pointerA++;

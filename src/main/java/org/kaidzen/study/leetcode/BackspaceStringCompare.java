@@ -26,7 +26,7 @@ public class BackspaceStringCompare {
 
         while (!sStack.isEmpty()) {
             char current = sStack.pop();
-            if (tStack.isEmpty() || tStack.pop() != current){
+            if (tStack.isEmpty() || tStack.pop() != current) {
                 return false;
             }
         }
@@ -35,12 +35,12 @@ public class BackspaceStringCompare {
 
     private Stack<Character> storeChars(String str) {
         Stack<Character> stack = new Stack<>();
-        for (char ch: str.toCharArray()){
-           if (ch != '#'){
-               stack.push(ch);
-           } else if (!stack.isEmpty()){
-               stack.pop();
-           }
+        for (char ch : str.toCharArray()) {
+            if (ch != '#') {
+                stack.push(ch);
+            } else if (!stack.isEmpty()) {
+                stack.pop();
+            }
         }
         return stack;
     }

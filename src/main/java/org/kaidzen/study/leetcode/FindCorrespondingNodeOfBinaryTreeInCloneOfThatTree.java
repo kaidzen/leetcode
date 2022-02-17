@@ -13,11 +13,11 @@ public class FindCorrespondingNodeOfBinaryTreeInCloneOfThatTree {
         return this.result;
     }
 
-    private void inOrder(TreeNode origin, TreeNode clone){
-        if (origin != null){
+    private void inOrder(TreeNode origin, TreeNode clone) {
+        if (origin != null) {
             //Traversal in order -> (Left, Root, Right)
             inOrder(origin.left, clone.left);
-            if (origin == target){
+            if (origin == target) {
                 this.result = clone;
             }
             //Or

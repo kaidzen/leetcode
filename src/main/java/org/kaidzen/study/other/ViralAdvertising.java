@@ -13,11 +13,11 @@ public class ViralAdvertising {
         int regress = 2;
         int sum = 0;
         int liked = 0;
-        for (int i = 0; i < n; i++){
-            if (i == 0){
-                 liked = friends / regress;
-                 sum += liked;
-                 continue;
+        for (int i = 0; i < n; i++) {
+            if (i == 0) {
+                liked = friends / regress;
+                sum += liked;
+                continue;
             }
             liked = liked * 3;
             sum += liked / regress;

@@ -45,7 +45,7 @@ public class ValidateIpAddress {
     private String validateIp6(String ip) {
         String[] octets = ip.split(Result.IPv6.getDelimiter());
         Predicate<String> singleZero = str -> {
-            if (str.startsWith("0") && str.length() <=4){
+            if (str.startsWith("0") && str.length() <= 4) {
                 return true;
             } else return str.length() <= 4;
         };

@@ -56,7 +56,7 @@ public class SortedDoubleLinkedList {
     public static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode llist, int data) {
         // Write your code here
         DoublyLinkedListNode newNode = new DoublyLinkedListNode(data);
-        if (llist == null){
+        if (llist == null) {
             return newNode;
         }
         return null;

@@ -32,7 +32,7 @@ public class LeastRecentlyLruCache {
 //        System.out.println(cache.get(2));       // returns 1
 
         // [[2],[2,1],[1,1],[2,3],[4,1],[1],[2]]
-        LRUCache cache = new LRUCache( 2);
+        LRUCache cache = new LRUCache(2);
 
         cache.put(2, 1);
         cache.put(1, 1);
@@ -95,8 +95,8 @@ public class LeastRecentlyLruCache {
                     map.remove(key);
                     queue.addFirst(newEntry);
                 }
-            }else {
-                if (queue.size() == capacity){
+            } else {
+                if (queue.size() == capacity) {
                     CacheEntry lastEntry = queue.removeLast();
                     map.remove(lastEntry.key);
                 }

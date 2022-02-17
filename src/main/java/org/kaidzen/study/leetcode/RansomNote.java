@@ -8,8 +8,8 @@ public class RansomNote {
             chars[ch]++;
         }
         int noteLength = ransomNote.length();
-        for (char ch: ransomNote.toCharArray()) {
-            if (chars[ch] > 0){
+        for (char ch : ransomNote.toCharArray()) {
+            if (chars[ch] > 0) {
                 noteLength--;
                 chars[ch]--;
             }
@@ -21,6 +21,6 @@ public class RansomNote {
         RansomNote note = new RansomNote();
         System.out.println(note.canConstruct("a", "b")); // false
         System.out.println(note.canConstruct("aa", "ab")); // false
-                System.out.println(note.canConstruct("aa", "aab")); // true
+        System.out.println(note.canConstruct("aa", "aab")); // true
     }
 }

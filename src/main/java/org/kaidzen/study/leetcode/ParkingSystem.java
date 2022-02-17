@@ -28,7 +28,7 @@ public class ParkingSystem {
     }
 
     public boolean addCar(int carType) {
-        if (garage.get(carType) <= 0){
+        if (garage.get(carType) <= 0) {
             return false;
         }
         final Integer counter = garage.merge(carType, 0, (old, nw) -> old - 1);

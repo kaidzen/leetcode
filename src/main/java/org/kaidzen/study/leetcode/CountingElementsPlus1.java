@@ -9,10 +9,10 @@ public class CountingElementsPlus1 {
 
     public static void main(String[] args) {
         List<int[]> list = Arrays.asList(
-                new int[] {1,2,3},
-                new int[] {1,1,3,3,5,5,7,7},
-                new int[] {1,3,2,3,5,0},
-                new int[] {1,1,2,2}
+                new int[]{1, 2, 3},
+                new int[]{1, 1, 3, 3, 5, 5, 7, 7},
+                new int[]{1, 3, 2, 3, 5, 0},
+                new int[]{1, 1, 2, 2}
         );
         CountingElementsPlus1 counter = new CountingElementsPlus1();
         list.forEach(
@@ -25,10 +25,10 @@ public class CountingElementsPlus1 {
         for (int elem : arr) {
             map.merge(elem, 1, (old, fresh) -> old + fresh);
         }
-        int sum =0;
-        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
+        int sum = 0;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             Integer key = entry.getKey();
-            if (map.containsKey(key +1)){
+            if (map.containsKey(key + 1)) {
                 sum += map.getOrDefault(key, 0);
             }
         }

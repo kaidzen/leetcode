@@ -9,11 +9,11 @@ public class SumRootToLeafBinaryNumbers {
     }
 
     private int sumRootToLeaf(TreeNode root, int sum) {
-        if (root == null){
+        if (root == null) {
             return 0;
         }
         sum = (sum << 1) + root.val;
-        if (root.left == null && root.right == null){
+        if (root.left == null && root.right == null) {
             return sum;
         }
         return sumRootToLeaf(root.left, sum) + sumRootToLeaf(root.right, sum);

@@ -5,7 +5,7 @@ public class ReverseString {
     public char[] reverseString(char[] s) {
         int start = 0;
         int end = s.length - 1;
-        while(start < end){
+        while (start < end) {
             swap(s, start, end);
             start++;
             end--;
@@ -13,7 +13,7 @@ public class ReverseString {
         return s;
     }
 
-    private void swap(char[] str, int one, int two){
+    private void swap(char[] str, int one, int two) {
         char temp = str[one];
         str[one] = str[two];
         str[two] = temp;

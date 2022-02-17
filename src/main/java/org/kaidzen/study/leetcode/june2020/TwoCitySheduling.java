@@ -6,7 +6,9 @@ public class TwoCitySheduling {
 
     public int twoCitySchedCost(int[][] costs) {
         //Sort out array, based on comparator of pair "common value".
-        Arrays.sort(costs, (a, b) -> {return (a[0] -a[1]) - (b[0] - b[1]);});
+        Arrays.sort(costs, (a, b) -> {
+            return (a[0] - a[1]) - (b[0] - b[1]);
+        });
         int totalCost = 0;
 //        //As costs is even and sorted, first half of it will be with smallest A's
 //        for (int i=0; i<costs.length/2; i++){
@@ -17,9 +19,9 @@ public class TwoCitySheduling {
 //            totalCost += costs[i][1];
 //        }
         //Optimized for better presentation
-        int half = costs.length/2;
-        for (int i=0; i<half; i++){
-            totalCost += costs[i][0] + costs[i+half][1];
+        int half = costs.length / 2;
+        for (int i = 0; i < half; i++) {
+            totalCost += costs[i][0] + costs[i + half][1];
         }
         //Return sum of coefficients() of A - B totalCost values
         return totalCost;

@@ -8,9 +8,9 @@ public class BuyAndSellStockII {
     public static void main(String[] args) {
 
         List<int[]> list = Arrays.asList(
-            new int[] {7, 1, 5, 3, 6, 4},
-            new int[] {1,2,3,4,5},
-                new int[] {7,6,4,3,1}
+                new int[]{7, 1, 5, 3, 6, 4},
+                new int[]{1, 2, 3, 4, 5},
+                new int[]{7, 6, 4, 3, 1}
         );
         BuyAndSellStockII stock = new BuyAndSellStockII();
         list
@@ -23,12 +23,12 @@ public class BuyAndSellStockII {
         int i = 0;
         int maxProfit = 0;
 
-        while (i< prices.length-1){
-            while (i < prices.length-1 && prices[i] >= prices[i+1]){
+        while (i < prices.length - 1) {
+            while (i < prices.length - 1 && prices[i] >= prices[i + 1]) {
                 i++;
             }
             low = prices[i];
-            while (i < prices.length-1 && prices[i+1] >= prices[i]){
+            while (i < prices.length - 1 && prices[i + 1] >= prices[i]) {
                 i++;
             }
             high = prices[i];

@@ -63,13 +63,13 @@ public class FirstUniqueCharacter {
 
         Arrays.sort(newArr);
         int max = 1;
-        for(int i = newArr.length - 1 ; i > 0; i--){
-            if(newArr[i] == newArr[i-1]) max++;
-                else break;
+        for (int i = newArr.length - 1; i > 0; i--) {
+            if (newArr[i] == newArr[i - 1]) max++;
+            else break;
         }
 
-        List<Integer> list = Arrays.asList(1,2,4,5,7,8);
-        for (int val: list) {
+        List<Integer> list = Arrays.asList(1, 2, 4, 5, 7, 8);
+        for (int val : list) {
             val++;
         }
 

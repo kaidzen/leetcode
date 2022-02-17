@@ -5,18 +5,18 @@ import org.kaidzen.study.leetcode.util.TreeNode;
 public class CountCompleteTreeNodes {
 
     public int countNodes(TreeNode root) {
-        if(root == null) return 0;
+        if (root == null) return 0;
         TreeNode left = root, right = root;
         int h_l = 0, h_r = 0;
-        while(left != null){
+        while (left != null) {
             h_l++;
             left = left.left;
         }
-        while(right != null){
+        while (right != null) {
             h_r++;
             right = right.right;
         }
-        if(h_l == h_r) return (1<<h_l) - 1;
+        if (h_l == h_r) return (1 << h_l) - 1;
         return 1 + countNodes(root.left) + countNodes(root.right);
     }
 

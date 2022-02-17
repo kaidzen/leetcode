@@ -49,16 +49,16 @@ public class LeftMostColumn {
         for (int i = 0; i < rows; i++) {
             int left = 0;
             int right = columns - 1;
-            while (left <= right){
-                if (left > result){
+            while (left <= right) {
+                if (left > result) {
                     break;
                 }
-                int mid = left + (right - left)/2;
+                int mid = left + (right - left) / 2;
                 int midElem = binaryMatrix.get(i, mid);
-                if (midElem == 1 && (mid == 0 || binaryMatrix.get(i, mid-1) == 0)){
+                if (midElem == 1 && (mid == 0 || binaryMatrix.get(i, mid - 1) == 0)) {
                     result = Math.min(result, mid);
                 }
-                if (midElem == 0){
+                if (midElem == 0) {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
@@ -93,6 +93,7 @@ public class LeftMostColumn {
 
     interface BinaryMatrix {
         int get(int x, int y);
+
         List<Integer> dimensions();
     }
 

@@ -8,7 +8,7 @@ public class RandomPickWithWeight {
     public RandomPickWithWeight(int[] w) {
         int length = w.length;
         weights = new int[length];
-        for (int i = 0; i<length; i++){
+        for (int i = 0; i < length; i++) {
             sum += w[i];
             weights[i] = sum;
         }
@@ -22,9 +22,9 @@ public class RandomPickWithWeight {
     private int binarySearch(int idx) {
         int left = 0;
         int right = weights.length - 1;
-        while (left < right){
-            int mid = left + (right - left)/2;
-            if (weights[mid] < idx){
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (weights[mid] < idx) {
                 left = mid + 1;
             } else {
                 right = mid;

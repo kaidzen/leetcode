@@ -1,8 +1,5 @@
 package org.kaidzen.study.leetcode;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Islands {
 
     public int numIslands(char[][] grid) {
@@ -11,8 +8,8 @@ public class Islands {
         int counter = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1'){
-                    if ((i == 0 || grid[i-1][j] == '0') && (j == 0 || grid[i][j-1] == '0')) {
+                if (grid[i][j] == '1') {
+                    if ((i == 0 || grid[i - 1][j] == '0') && (j == 0 || grid[i][j - 1] == '0')) {
                         counter++;
                     }
                 }
@@ -22,14 +19,14 @@ public class Islands {
     }
 
     public int numIslands2(char[][] grid) {
-        if(grid==null || grid.length==0||grid[0].length==0)
+        if (grid == null || grid.length == 0 || grid[0].length == 0)
             return 0;
         int m = grid.length;
         int n = grid[0].length;
-        int count=0;
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
-                if(grid[i][j]=='1'){
+        int count = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
                     count++;
                     merge(grid, i, j);
                 }
@@ -38,19 +35,19 @@ public class Islands {
         return count;
     }
 
-    private void merge(char[][] grid, int i, int j){
-        int m=grid.length;
-        int n=grid[0].length;
+    private void merge(char[][] grid, int i, int j) {
+        int m = grid.length;
+        int n = grid[0].length;
 
-        if(i<0||i>=m||j<0||j>=n||grid[i][j]!='1')
+        if (i < 0 || i >= m || j < 0 || j >= n || grid[i][j] != '1')
             return;
 
-        grid[i][j]='X';
+        grid[i][j] = 'X';
 
-        merge(grid, i-1, j);
-        merge(grid, i+1, j);
-        merge(grid, i, j-1);
-        merge(grid, i, j+1);
+        merge(grid, i - 1, j);
+        merge(grid, i + 1, j);
+        merge(grid, i, j - 1);
+        merge(grid, i, j + 1);
     }
 
     public static void main(String[] args) {

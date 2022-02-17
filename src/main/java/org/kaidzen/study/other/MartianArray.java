@@ -42,7 +42,7 @@ public class MartianArray {
         }
         countCandidates(ints[0]);
         for (int i = 1; i < length; i++) {
-            int first = ints[i-1];
+            int first = ints[i - 1];
             int second = ints[i];
             if (first == second) {
                 return 0;
@@ -53,9 +53,9 @@ public class MartianArray {
     }
 
     private static void countCandidates(int value) {
-        if (value == 1){
+        if (value == 1) {
             oneCounter += 1;
-        } else if (value == 2){
+        } else if (value == 2) {
             twoCounter += 1;
         }
     }

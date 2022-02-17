@@ -17,9 +17,9 @@ public class EnoughIsEnough {
         Map<Integer, Integer> map = new HashMap<>();
 
         // fulfill occurrences, with corner case Zero one
-        for(int el : elements){
+        for (int el : elements) {
             map.merge(el, maxOccurrences > 0 ? 1 : 0, (old, nw) -> {
-                if (old < maxOccurrences){
+                if (old < maxOccurrences) {
                     return old + 1;
                 }
                 return maxOccurrences > 0 ? old : 0;
@@ -27,9 +27,9 @@ public class EnoughIsEnough {
         }
         List<Integer> result = new ArrayList<>();
         //Producing result according to occupancies map
-        for (int i=0; i< elements.length;  i++){
+        for (int i = 0; i < elements.length; i++) {
             final int element = elements[i];
-            if(map.containsKey(element) && map.get(element) != 0){
+            if (map.containsKey(element) && map.get(element) != 0) {
                 result.add(element);
             }
         }

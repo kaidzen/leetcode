@@ -14,9 +14,9 @@ public class ContiguosArray {
 
         track.put(0, -1);
 
-        for(int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             currentSum += nums[i] == 0 ? -1 : nums[i]; //calculate balance of array's elements
-            if(track.containsKey(currentSum)){
+            if (track.containsKey(currentSum)) {
                 maxSum = Math.max(maxSum, i - track.get(currentSum));
             } else {
                 track.put(currentSum, i);

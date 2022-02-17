@@ -7,8 +7,8 @@ public class JumpGame {
 
     public boolean canJump(int[] nums) {
         int lastGoodPosition = 0;
-        for (int i= nums.length-1; i >= 0; i--){
-            if (i + nums[i] >= lastGoodPosition){
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i + nums[i] >= lastGoodPosition) {
                 lastGoodPosition = i;
             }
         }
@@ -20,8 +20,8 @@ public class JumpGame {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = new int[]{2,3,1,1,4};
-        int[] arr2 = new int[]{3,2,1,0,4};
+        int[] arr1 = new int[]{2, 3, 1, 1, 4};
+        int[] arr2 = new int[]{3, 2, 1, 0, 4};
 
         JumpGame game = new JumpGame();
 

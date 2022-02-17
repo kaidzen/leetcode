@@ -15,10 +15,10 @@ public class CountSmallerAfterSelf {
                 new int[]{-1, 0}
         );
         List<int[]> answers = Arrays.asList(
-                new int[]{2,1,1,0},
+                new int[]{2, 1, 1, 0},
                 new int[]{0},
-                new int[]{0,0},
-                new int[]{0,0}
+                new int[]{0, 0},
+                new int[]{0, 0}
         );
 
         CountSmallerAfterSelf smaller = new CountSmallerAfterSelf();
@@ -36,7 +36,7 @@ public class CountSmallerAfterSelf {
         indexesOfNumber.clear();
         final int length = nums.length;
         Deque<Integer> counts = new ArrayDeque<>(length);
-        for (int j = length-1; j>=0; j--){
+        for (int j = length - 1; j >= 0; j--) {
             int current = nums[j];
             indexesOfNumber.merge(current, 1, (ol, nw) -> ol + 1);
             countIt(current, counts);
@@ -49,15 +49,15 @@ public class CountSmallerAfterSelf {
         int max = Integer.MIN_VALUE;
         final int length = nums.length;
         Deque<Integer> counts = new ArrayDeque<>(length);
-        for (int i=0, j = length-1; j>=0 && i < length; j--, i++){
+        for (int i = 0, j = length - 1; j >= 0 && i < length; j--, i++) {
             min = Math.min(Math.min(nums[i], nums[j]), min);
             max = Math.max(Math.max(nums[i], nums[j]), max);
 
         }
 
         BinaryIndexedTree tree = new BinaryIndexedTree(min, max);
-        System.out.println("Min: " +min+ ", Max: " +max);
-        for (int i = length-1; i >=0 ; i--) {
+        System.out.println("Min: " + min + ", Max: " + max);
+        for (int i = length - 1; i >= 0; i--) {
             final int current = nums[i];
             counts.offerFirst(tree.count(current - 1));
             tree.increment(current);
@@ -99,7 +99,7 @@ public class CountSmallerAfterSelf {
 
     private void countIt(int current, Deque<Integer> counts) {
         final Integer firstKey = indexesOfNumber.firstKey();
-        if (current > firstKey){
+        if (current > firstKey) {
             final int sum = IntStream.rangeClosed(firstKey, current - 1).boxed()
                     .mapToInt(key -> indexesOfNumber.getOrDefault(key, 0))
                     .sum();

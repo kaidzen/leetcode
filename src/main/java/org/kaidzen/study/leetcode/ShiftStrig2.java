@@ -12,10 +12,10 @@ public class ShiftStrig2 {
             }
         }
         rotations = rotations % s.length();
-        if (rotations > 0){
+        if (rotations > 0) {
             s = s.substring(rotations) + s.substring(0, rotations);
-        } else if (rotations < 0){
-            s = s.substring(s.length()-Math.abs(rotations)) + s.substring(0, s.length() - Math.abs(rotations));
+        } else if (rotations < 0) {
+            s = s.substring(s.length() - Math.abs(rotations)) + s.substring(0, s.length() - Math.abs(rotations));
         }
         return s;
     }
@@ -24,7 +24,7 @@ public class ShiftStrig2 {
         String s = "abc";
         int[][] shift = {{0, 1}, {1, 2}};
         String s2 = "abcdefg";
-        int[][] shift2 = {{1,1},{1,1},{0,2},{1,3}};
+        int[][] shift2 = {{1, 1}, {1, 1}, {0, 2}, {1, 3}};
 
         ShiftStrig2 sShift = new ShiftStrig2();
 

@@ -31,7 +31,7 @@ public class ShiftString {
         String s = "abc";
         int[][] shift = {{0, 1}, {1, 2}};
         String s2 = "abcdefg";
-        int[][] shift2 = {{1,1},{1,1},{0,2},{1,3}};
+        int[][] shift2 = {{1, 1}, {1, 1}, {0, 2}, {1, 3}};
 
         ShiftString sShift = new ShiftString();
 

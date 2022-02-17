@@ -21,11 +21,11 @@ public class ShuffleString {
         int length = indices.length;
         List<String> list = new ArrayList<>(length);
 
-        for (int i = 0; i<length; i++) {
+        for (int i = 0; i < length; i++) {
             list.add("");
         }
 
-        for (int i = 0; i<length; i++) {
+        for (int i = 0; i < length; i++) {
             list.add(indices[i], chars[i]);
         }
 

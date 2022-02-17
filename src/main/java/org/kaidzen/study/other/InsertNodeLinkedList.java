@@ -52,27 +52,28 @@ public class InsertNodeLinkedList {
             }
         }
     }
-        public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
-            // Write your code here
-            SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
-            if (llist == null){
-                return newNode;
-            }
-            SinglyLinkedListNode current = llist;
-            if (position == 0 ){
-                newNode.next = llist;
-                return newNode;
-            }
-            while (position-1 > 0 && current.next != null){
-                position--;
-                current = current.next;
-            }
 
-            newNode.next = current.next;
-            current.next = newNode;
-
-            return llist;
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
+        // Write your code here
+        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+        if (llist == null) {
+            return newNode;
         }
+        SinglyLinkedListNode current = llist;
+        if (position == 0) {
+            newNode.next = llist;
+            return newNode;
+        }
+        while (position - 1 > 0 && current.next != null) {
+            position--;
+            current = current.next;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+
+        return llist;
+    }
 
     private static final Scanner scanner = new Scanner(System.in);
 

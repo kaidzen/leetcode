@@ -10,7 +10,7 @@ public class FirstUniqNumber {
     private Node tail;
 
     public FirstUniqNumber(int[] nums) {
-        uniques =new HashMap<>(nums.length);
+        uniques = new HashMap<>(nums.length);
         head = null;
         tail = null;
     }
@@ -27,7 +27,7 @@ public class FirstUniqNumber {
     private void append(int value) {
         Node node = new Node(value);
         uniques.put(value, node);
-        if (head == null){
+        if (head == null) {
             head = node;
             tail = node;
         } else {

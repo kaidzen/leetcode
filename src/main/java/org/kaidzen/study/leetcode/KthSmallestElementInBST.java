@@ -12,14 +12,15 @@ public class KthSmallestElementInBST {
     }
 
     private void inOrder(TreeNode root, int[] nums, int k) {
-        if (root == null){
+        if (root == null) {
             return;
         }
         inOrder(root.left, nums, k);
         if (++nums[0] == k) {
             nums[1] = root.val;
             return;
-        };
+        }
+        ;
         inOrder(root.right, nums, k);
     }
 

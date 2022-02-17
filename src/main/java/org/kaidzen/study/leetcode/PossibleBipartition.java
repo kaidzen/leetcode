@@ -25,14 +25,14 @@ public class PossibleBipartition {
         return true;
     }
 
-    private boolean dfs(List<Integer>[] adj, int[] groups, int v, int group){
-        if (groups[v] == -1){
+    private boolean dfs(List<Integer>[] adj, int[] groups, int v, int group) {
+        if (groups[v] == -1) {
             groups[v] = group;
         } else {
             return groups[v] == group;
         }
-        for (int n: adj[v]){
-            if (!dfs(adj, groups, n, 1 - group)){
+        for (int n : adj[v]) {
+            if (!dfs(adj, groups, n, 1 - group)) {
                 return false;
             }
         }
@@ -44,6 +44,6 @@ public class PossibleBipartition {
 //        Input: N = 4, dislikes = [[1,2],[1,3],[2,4]]
 ////        Output: true
 ////        Explanation: group1 [1,4], group2 [2,3]
-        System.out.println(biPartitioned.possibleBipartition(4, new int[][]{{1,2},{1,3},{2,4}}));
+        System.out.println(biPartitioned.possibleBipartition(4, new int[][]{{1, 2}, {1, 3}, {2, 4}}));
     }
 }

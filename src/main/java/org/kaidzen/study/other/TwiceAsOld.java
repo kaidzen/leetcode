@@ -11,12 +11,12 @@ public class TwiceAsOld {
 
     }
 
-    public int asOld(int dadYears, int sonYears){
-        if(sonYears == 0){
+    public int asOld(int dadYears, int sonYears) {
+        if (sonYears == 0) {
             return dadYears;
         }
 
-        return Math.abs(dadYears - (sonYears  * 2));
+        return Math.abs(dadYears - (sonYears * 2));
     }
 
 

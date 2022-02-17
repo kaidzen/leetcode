@@ -9,8 +9,8 @@ public class DrawingBook {
     }
 
     public static int pageCount(int n, int p) {
-        int totalTurns = n/2;
-        int forwardPAgeTurns = p/2;
+        int totalTurns = n / 2;
+        int forwardPAgeTurns = p / 2;
         return Math.min(forwardPAgeTurns, totalTurns - forwardPAgeTurns);
     }
 }
