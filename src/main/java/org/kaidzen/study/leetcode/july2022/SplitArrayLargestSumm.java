@@ -4,9 +4,14 @@ public class SplitArrayLargestSumm {
 
     public static void main(String[] args) {
         SplitArrayLargestSumm largest = new SplitArrayLargestSumm();
+
         int[] nums = new int[]{7,2,5,10,8};
         int m = 2;
         System.out.println("Largest sum: " + largest.splitArray(nums, m));
+
+        int[] nums2 = new int[]{7,2,5,10,8};
+        int m2 = 2;
+        System.out.println("Largest sum2: " + largest.splitArray2(nums2, m2));
     }
 
     public int splitArray(int[] nums, int m) {
@@ -49,11 +54,11 @@ public class SplitArrayLargestSumm {
         int sum = 0;
         int numOfSubarrays = 1;
 
-        for (int i = 0; i < nums.length; i ++) {
-            sum += nums[i];
+        for (int num : nums) {
+            sum += num;
             if (sum > mid) {
-                numOfSubarrays ++;
-                sum = nums[i];
+                numOfSubarrays++;
+                sum = num;
             }
         }
 

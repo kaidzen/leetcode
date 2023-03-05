@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public final class ResourceFile {
 
@@ -29,5 +30,22 @@ public final class ResourceFile {
             e.printStackTrace();
         }
         return Collections.emptyList();
+    }
+
+    public static List<String> streamFromFile(String fileName) {
+        List<String> result = new ArrayList();
+
+        try (InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
+             InputStreamReader isr = new InputStreamReader(is);
+             BufferedReader bufferedIsr = new BufferedReader(isr);
+        ) {
+                return bufferedIsr.lines().collect(Collectors.toList());
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return result;
+        }
     }
 }
