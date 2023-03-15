@@ -1,4 +1,4 @@
-package org.kaidzen.study.leetcode.y2023;
+package org.kaidzen.study.leetcode.y2023.array;
 
 import org.kaidzen.study.leetcode.util.ResourceFile;
 
