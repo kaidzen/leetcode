@@ -1,8 +1,5 @@
 package org.kaidzen.study.leetcode;
 
-import javafx.util.Pair;
-
-
 public class DiameterOfBinaryTree {
     public int diameterOfBinaryTree(TreeNode root) {
         if (root == null) {
