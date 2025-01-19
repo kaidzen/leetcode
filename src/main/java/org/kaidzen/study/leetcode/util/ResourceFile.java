@@ -33,7 +33,7 @@ public final class ResourceFile {
     }
 
     public static List<String> streamFromFile(String fileName) {
-        List<String> result = new ArrayList();
+        List<String> result = new ArrayList<>();
 
         try (InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
              InputStreamReader isr = new InputStreamReader(is);
