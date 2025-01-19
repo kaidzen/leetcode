@@ -11,7 +11,7 @@ public class InOrder {
 
     public static void main(String[] args) {
         InOrder inOrder = new InOrder();
-        //[1,null,2,3]
+        //[1,nu ll,2,3]
         TreeNode node = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
         //[3,2,1]
         TreeNode node1 = new TreeNode(3, new TreeNode(2), new TreeNode(1));

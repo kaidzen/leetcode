@@ -6,12 +6,14 @@ public class LongestRepeatingCharacterReplacement {
         LongestRepeatingCharacterReplacement longestReplaced = new LongestRepeatingCharacterReplacement();
 
         String str = "ABAB";
+        /*
         int k = 2;
         System.out.println(longestReplaced.characterReplacement(str, k)); //4
+        */
 
         String str2 = "AABABBA";
         int k2 = 1;
-        System.out.println(longestReplaced.characterReplacement(str, k2)); //4
+        System.out.println(longestReplaced.characterReplacement(str2, k2)); //4
 
     }
 

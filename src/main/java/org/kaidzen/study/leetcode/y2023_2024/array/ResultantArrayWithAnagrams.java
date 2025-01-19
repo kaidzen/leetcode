@@ -42,7 +42,7 @@ public class ResultantArrayWithAnagrams{
         int[] firstI = new int[26];
         int[] secondI = new int[26];
 
-        for(char ch: first.toCharArray()) firstI[ch-'a']++;
+          for(char ch: first.toCharArray()) firstI[ch-'a']++;
         for(char ch: second.toCharArray()) secondI[ch-'a']++;
 
         for(int i=0; i<firstI.length; i++){
