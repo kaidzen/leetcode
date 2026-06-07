@@ -2,7 +2,7 @@ package org.kaidzen.study.other.concurrent;
 
 public class OddEvenExample {
     // Starting the counter  
-    int counter = 1;
+    int counter = 0;
     static int NUM;
 
     // Method for printing the odd numbers

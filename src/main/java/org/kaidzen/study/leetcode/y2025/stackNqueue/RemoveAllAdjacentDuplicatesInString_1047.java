@@ -1,4 +1,4 @@
-package org.kaidzen.study.leetcode.y2025.stack;
+package org.kaidzen.study.leetcode.y2025.stackNqueue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

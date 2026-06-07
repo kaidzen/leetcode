@@ -1,4 +1,4 @@
-package org.kaidzen.study.leetcode.y2025.stack;
+package org.kaidzen.study.leetcode.y2025.stackNqueue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -6,9 +6,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Given a string s, remove duplicate letters so that every letter appears once and only once. You must make sure your
- * result is the smallest in lexicographical order among all possible results.
- * There are 3 major points to track: frequency of the characters, character been seen or not, stack that will accumulate
+ * Given a string s, remove duplicate letters so that every letter appears once and only once.
+ * You must make sure your result is the smallest in lexicographical order among all possible results.
+ * There are 3 major points to track: frequency of the characters, character been seen or not,
+ * stack that will accumulate
  * the result.
  */
 public class RemoveDuplicateLetters_316 {

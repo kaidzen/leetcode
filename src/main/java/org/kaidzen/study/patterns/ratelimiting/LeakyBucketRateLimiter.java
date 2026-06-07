@@ -8,7 +8,8 @@ import java.util.concurrent.atomic.AtomicLong;
  * If the bucket (buffer) overflows, new requests are discarded
  * <p>
  * Pros:
- * - Smooths Bursts: Effectively smoothens out bursts of traffic over time, allowing for handling sudden spikes more gracefully.
+ * - Smooths Bursts: Effectively smoothens out bursts of traffic over time,
+ * allowing for handling sudden spikes more gracefully.
  * - Consistent Output Rate: Ensures that the data processing occurs at a steady rate.
  * <p>
  * Cons:

@@ -3,7 +3,7 @@ package org.kaidzen.study.patterns.ratelimiting.tasks;
 import java.util.List;
 
 /**
- * Service, that will verify if user allowed to perfor operation, based on the limits.
+ * Service, that will verify if user allowed to perform operation, based on the limits.
  */
 public class UserOperationLimiter {
 
